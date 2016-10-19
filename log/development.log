@@ -7319,3 +7319,102 @@ Processing by SessionController#create as */*
 Completed 200 OK in 2404ms (Views: 91.2ms | ActiveRecord: 1437.9ms)
 
 
+DEPRECATION WARNING: Passing strings or symbols to the middleware builder is deprecated, please change
+them to actual class references.  For example:
+
+  "Rack::Cors" => Rack::Cors
+
+ (called from <top (required)> at /Users/aashishkhullar/Documents/lokavidya/client/config/environment.rb:5)
+Started POST "/login" for ::1 at 2016-10-19 19:31:18 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionController#create as */*
+  Parameters: {"user"=>{"email"=>"aashish_khullar@aol.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "aashish_khullar@aol.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (105.6ms)[0m  [1m[32mINSERT INTO "sessions" ("user_id", "token", "created_at", "updated_at", "uuid") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 7], ["token", "7287bfa4434b5d113d368f50169437ba8afcbe66"], ["created_at", 2016-10-19 14:01:19 UTC], ["updated_at", 2016-10-19 14:01:19 UTC], ["uuid", "nEy_7-FuatxNTg5wr8ucpSUcMtA"]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 349ms (ActiveRecord: 116.1ms)
+
+
+  
+ActiveRecord::RecordNotUnique (PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_sessions_on_uuid"
+DETAIL:  Key (uuid)=(nEy_7-FuatxNTg5wr8ucpSUcMtA) already exists.
+: INSERT INTO "sessions" ("user_id", "token", "created_at", "updated_at", "uuid") VALUES ($1, $2, $3, $4, $5) RETURNING "id"):
+  
+app/controllers/session_controller.rb:14:in `create'
+Started POST "/login" for ::1 at 2016-10-19 19:31:50 +0530
+Processing by SessionController#create as */*
+  Parameters: {"user"=>{"email"=>"aashish_khullar@aol.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "aashish_khullar@aol.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (34.8ms)[0m  [1m[32mINSERT INTO "sessions" ("user_id", "token", "created_at", "updated_at", "uuid") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 7], ["token", "e557a67d9725bfbd889f0dd17282409bc346e1f7"], ["created_at", 2016-10-19 14:01:50 UTC], ["updated_at", 2016-10-19 14:01:50 UTC], ["uuid", "nEy_7-FuatxNTg5wr8ucpSUcMtA"]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 134ms (ActiveRecord: 36.3ms)
+
+
+  
+ActiveRecord::RecordNotUnique (PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_sessions_on_uuid"
+DETAIL:  Key (uuid)=(nEy_7-FuatxNTg5wr8ucpSUcMtA) already exists.
+: INSERT INTO "sessions" ("user_id", "token", "created_at", "updated_at", "uuid") VALUES ($1, $2, $3, $4, $5) RETURNING "id"):
+  
+app/controllers/session_controller.rb:14:in `create'
+DEPRECATION WARNING: Passing strings or symbols to the middleware builder is deprecated, please change
+them to actual class references.  For example:
+
+  "Rack::Cors" => Rack::Cors
+
+ (called from <top (required)> at /Users/aashishkhullar/Documents/lokavidya/client/config/environment.rb:5)
+Started POST "/login" for ::1 at 2016-10-19 19:34:34 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionController#create as */*
+  Parameters: {"user"=>{"email"=>"aashish_khullar@aol.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "aashish_khullar@aol.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (74.3ms)[0m  [1m[32mINSERT INTO "sessions" ("user_id", "token", "created_at", "updated_at", "uuid") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 7], ["token", "b133c161279563da8b7dde68beebce78108b9e56"], ["created_at", 2016-10-19 14:04:36 UTC], ["updated_at", 2016-10-19 14:04:36 UTC], ["uuid", "nEy_7-FuatxNTg5wr8ucpSUcMtA"]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 296ms (ActiveRecord: 86.1ms)
+
+
+  
+ActiveRecord::RecordNotUnique (PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_sessions_on_uuid"
+DETAIL:  Key (uuid)=(nEy_7-FuatxNTg5wr8ucpSUcMtA) already exists.
+: INSERT INTO "sessions" ("user_id", "token", "created_at", "updated_at", "uuid") VALUES ($1, $2, $3, $4, $5) RETURNING "id"):
+  
+app/controllers/session_controller.rb:14:in `create'
+Started POST "/login" for ::1 at 2016-10-19 19:35:54 +0530
+Processing by SessionController#create as */*
+  Parameters: {"user"=>{"email"=>"aashish_khullar@aol.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "aashish_khullar@aol.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (38.6ms)[0m  [1m[32mINSERT INTO "sessions" ("user_id", "token", "created_at", "updated_at", "uuid") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 7], ["token", "0fb2602b76b785d8466e705d57d9d4dfd59261e8"], ["created_at", 2016-10-19 14:05:54 UTC], ["updated_at", 2016-10-19 14:05:54 UTC], ["uuid", "nEy_7-FuatxNTg5wr8ucpSUcMtA"]]
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 223ms (ActiveRecord: 46.9ms)
+
+
+  
+ActiveRecord::RecordNotUnique (PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_sessions_on_uuid"
+DETAIL:  Key (uuid)=(nEy_7-FuatxNTg5wr8ucpSUcMtA) already exists.
+: INSERT INTO "sessions" ("user_id", "token", "created_at", "updated_at", "uuid") VALUES ($1, $2, $3, $4, $5) RETURNING "id"):
+  
+app/controllers/session_controller.rb:14:in `create'
+Started POST "/login" for ::1 at 2016-10-19 19:36:26 +0530
+Processing by SessionController#create as */*
+  Parameters: {"user"=>{"email"=>"aashish_khullar@aol.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "aashish_khullar@aol.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (26.7ms)[0m  [1m[32mINSERT INTO "sessions" ("user_id", "token", "created_at", "updated_at", "uuid") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 7], ["token", "67f8adfa661e0a6ddaf3c38e68aa2170d944be7f"], ["created_at", 2016-10-19 14:06:26 UTC], ["updated_at", 2016-10-19 14:06:26 UTC], ["uuid", "nEy_7-FuatxNTg5wr8ucpSUcMtA"]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 185ms (ActiveRecord: 34.9ms)
+
+
+  
+ActiveRecord::RecordNotUnique (PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_sessions_on_uuid"
+DETAIL:  Key (uuid)=(nEy_7-FuatxNTg5wr8ucpSUcMtA) already exists.
+: INSERT INTO "sessions" ("user_id", "token", "created_at", "updated_at", "uuid") VALUES ($1, $2, $3, $4, $5) RETURNING "id"):
+  
+app/controllers/session_controller.rb:14:in `create'
