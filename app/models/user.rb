@@ -1,7 +1,7 @@
 require 'bcrypt'
 class User < ApplicationRecord
 	include BCrypt
-	has_many :session , :dependent => :destroy
+	has_many :sessions, :dependent => :destroy
 	has_secure_password
 	validates_presence_of :name
 	validates_presence_of :email
