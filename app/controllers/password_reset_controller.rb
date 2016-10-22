@@ -7,7 +7,8 @@ class PasswordResetController < ApplicationController
           msg = {:status => 200, :message =>"password reset", :email => @user.email}
           return render :json => msg
          else
-            render json:@user, status: 304
+          notice = {:status => 304, :message =>"Email does not exist"}
+          render :json => notice
         end
   end
 
